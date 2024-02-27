@@ -1,0 +1,6 @@
+
+const nuevoDiscente = (discente) => {
+  discentes = [...discentes, discente];
+}
+
+ , nuevoDiscente 
