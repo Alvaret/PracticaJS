@@ -8,13 +8,13 @@ import { limpiarFormulario , crearDiscente , cargarDatosFormulario  } from './bi
 document.addEventListener('DOMContentLoaded', () => {
     var doc = window.document;
 
-    //cargarDiscentes(discentes);
+    cargarDiscentes(discentes);
 
     //Evento mostrar discentes mediante boton
     let botonMostrar = doc.getElementById('mostrar');
     botonMostrar.addEventListener('click' , event => {
         cargarDiscentes(discentes);
-    })
+    });
 
     //Evento de borrar discente
     let listado = doc.getElementById("listado");
@@ -99,16 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }else {
                 console.log('Formulario vacio o usuario ya existente');
             }
-
         }else {
             console.log('Usuario ya creado , actualizar en vez de guardar');
         }
-
-
-
-
-
-
     });
 
 
