@@ -25,11 +25,38 @@ let discentes = [
 const nuevoDiscente = (discente) => {
   discentes = [...discentes, discente];
   console.log('Discente agregado');
-}
+} ;
 
 const borrarDiscenteId = (id) => {
 discentes = discentes.filter( discentes => discentes.id != id );
 console.log("Discente eliminado");
+} ;
+
+const mostrarDiscenteId = (id) => {
+  let discentePorId = discentes.find( discentes => discentes.id === id );
+  return discentePorId;
 }
 
-export { discentes , nuevoDiscente , borrarDiscenteId };
+
+const actualizarDiscenteId = (id, nombre, apellidos , permite) => {
+  console.log('ID:', id);
+  console.log('Nombre:', nombre);
+  console.log('Apellidos:', apellidos);
+  console.log('Permite:', permite);
+  
+
+  let indexDiscente = discentes.findIndex(discente => discente.id === id);
+
+  
+  if (indexDiscente !== -1) {
+    discentes[indexDiscente].nombre = nombre;
+    discentes[indexDiscente].apellidos = apellidos;
+    discentes[indexDiscente].acepta = permite;
+    console.log('Discente actualizado');
+  } else {
+    console.log('No se encontró ningún discente con el ID dado');
+  }
+};
+
+
+export { discentes , nuevoDiscente , borrarDiscenteId , mostrarDiscenteId , actualizarDiscenteId };
