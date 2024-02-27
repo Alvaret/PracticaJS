@@ -7,7 +7,13 @@ import { cargarDiscentes }  from './bibliotecas/manejoDiscentes.js';
 document.addEventListener('DOMContentLoaded', () => {
     var doc = window.document;
 
-    cargarDiscentes(discentes);
+    //cargarDiscentes(discentes);
+
+    //Evento mostrar discentes mediante boton
+    let botonMostrar = doc.getElementById('mostrar');
+    botonMostrar.addEventListener('click' , event => {
+        cargarDiscentes(discentes);
+    })
 
     //Evento de borrar discente
     let listado = doc.getElementById("listado");
@@ -18,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             borrarDiscenteId(idDiscente);
             cargarDiscentes(discentes);
         }
-    })
+    });
 
 
 
