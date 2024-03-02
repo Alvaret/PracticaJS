@@ -15,8 +15,11 @@ const cargarDiscentes = (arrayDiscentes) => {
 
     var articleDiscentesTotal = arrayDiscentes.map( 
         discente => {
+            //El id del discente
+            let idDiscente = `${discente.id}`;
             //Creamos un article y le añadimos la clase discente
             let articleDiscente = doc.createElement('article');
+            articleDiscente.setAttribute("id",idDiscente);
             articleDiscente.classList.add('discente');
 
             //Creamos un div
@@ -54,12 +57,12 @@ const cargarDiscentes = (arrayDiscentes) => {
             pAcciones.classList.add("acciones");
 
             //El id del discente
-            let idDiscente = `${discente.id}`;
+            //let idDiscente = `${discente.id}`;
 
             //Crear boton editar , añadir clases y atributo
             let botonEditar = doc.createElement('button');
             botonEditar.classList.add('mini','borde','editar');
-            botonEditar.setAttribute('id' , idDiscente);
+                //botonEditar.setAttribute('id' , idDiscente);
             botonEditar.textContent = `Editar`;
             //Lo añadimos al p de acciones
             pAcciones.appendChild(botonEditar);
@@ -67,7 +70,7 @@ const cargarDiscentes = (arrayDiscentes) => {
             //Crear boton de eliminar , añadir clases y atributo
             let botonEliminar = doc.createElement('button');
             botonEliminar.classList.add('mini' , 'borde' , 'eliminar');
-            botonEliminar.setAttribute('id' , idDiscente);
+                //botonEliminar.setAttribute('id' , idDiscente);
             botonEliminar.textContent = `Eliminar`;
             //Lo añadimos al p de acciones
             pAcciones.appendChild(botonEliminar);
