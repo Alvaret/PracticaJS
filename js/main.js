@@ -3,8 +3,8 @@
 
 import { discentes , nuevoDiscente , borrarDiscenteId }  from './bibliotecas/objetos.js';
 import { cargarDiscentes }  from './bibliotecas/manejoDiscentes.js';
-import { limpiarFormulario , crearDiscente , cargarDatosFormulario  } from './bibliotecas/datosDiscente.js';
-import { actualizarDiscente , guardarDiscente} from './bibliotecas/manejarForm.js';
+import {   crearDiscente , cargarDatosFormulario  } from './bibliotecas/datosDiscente.js';
+import { actualizarDiscente , guardarDiscente , limpiarFormulario } from './bibliotecas/manejarForm.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     var doc = window.document;
@@ -15,11 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let botonMostrar = doc.getElementById('mostrar');
     botonMostrar.addEventListener('click' , () => {
         cargarDiscentes(discentes);
-    });
+    } , false );
 
     //Evento de eliminar discente y editar discente
     let listado = doc.getElementById("listado");
     listado.addEventListener('click' , (e) => {
+
         let botonEliminar = e.target.closest('.eliminar');
 
         if ( botonEliminar){
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             borrarDiscenteId(idDiscente);
             cargarDiscentes(discentes);
         }
-    });
+    } , false );
 
     listado.addEventListener('click' , (e) => {
         let botonEditar = e.target.closest('.editar');
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             limpiarFormulario();   
             cargarDatosFormulario(idDiscente);
         }
-    });
+    } , false );
 
 
     //Evento actualizar un discente
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     botonActualizar.addEventListener('click' , (e) => {
         actualizarDiscente(e);
         cargarDiscentes(discentes);
-    });
+    } , false );
 
 
 
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let botonLimpiarFormulario = doc.getElementById('limpiar');
     botonLimpiarFormulario.addEventListener('click' , () => {
         limpiarFormulario();
-    });
+    } , false );
 
 
 
@@ -61,12 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let botonGuardar = doc.getElementById('guardar');
     botonGuardar.addEventListener('click' , (e) => {
         guardarDiscente(e);
-    });
+    } , false );
 
 
 
-
-
-
-
-  });
+} , false );

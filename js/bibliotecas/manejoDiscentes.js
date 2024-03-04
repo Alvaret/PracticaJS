@@ -4,7 +4,6 @@ const borrarListadoHtml = () => {
     let doc = window.document;
     var listado = doc.getElementById('listado');
     listado.innerHTML = '';
-    console.log("Borrado listado");
 }
 
 const cargarDiscentes = (arrayDiscentes) => {
@@ -17,6 +16,7 @@ const cargarDiscentes = (arrayDiscentes) => {
         discente => {
             //El id del discente
             let idDiscente = `${discente.id}`;
+
             //Creamos un article y le añadimos la clase discente
             let articleDiscente = doc.createElement('article');
             articleDiscente.setAttribute("id",idDiscente);
@@ -55,9 +55,6 @@ const cargarDiscentes = (arrayDiscentes) => {
             //Crear la p y añadir la classe acciones
             let pAcciones = doc.createElement("p");
             pAcciones.classList.add("acciones");
-
-            //El id del discente
-            //let idDiscente = `${discente.id}`;
 
             //Crear boton editar , añadir clases y atributo
             let botonEditar = doc.createElement('button');

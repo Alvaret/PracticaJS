@@ -16,27 +16,11 @@ const crearDiscente = ( nombre , apellidos , value) => {
 
 } 
 
-const limpiarFormulario = () => {
 
-    let doc = window.document;
-
-    doc.getElementById('nombre').value = '';
-    doc.getElementById('apellidos').value = '';
-    doc.getElementById('permite').checked = false;
-
-    //Si existe el campo oculto de id lo borramos
-    let idOculto = doc.getElementById('idOculto');
-    if(idOculto) {
-        idOculto.remove();
-    }
-    console.log('Formulario Limpiado');
-
-}
 
 const cargarDatosFormulario = (id) => {
 
     let discente = mostrarDiscenteId(id);
-    console.log(discente);
 
     let doc = window.document;
 
@@ -55,4 +39,4 @@ const cargarDatosFormulario = (id) => {
 
 }
 
-export { limpiarFormulario , crearDiscente , cargarDatosFormulario};
+export { crearDiscente , cargarDatosFormulario};
